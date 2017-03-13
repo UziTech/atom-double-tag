@@ -251,3 +251,9 @@ describe "DoubleTag", ->
         it "does not throw an error", ->
           editor.setCursorBufferPosition([0, 4])
           editor.backspace()
+
+        it "removes letter from end tag", ->
+          editor.setCursorBufferPosition([0, 4])
+          editor.backspace()
+
+          expect(editor.getText()).toBe '<fo( class="bar">foobar</fo>'
